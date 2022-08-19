@@ -1,3 +1,4 @@
+<?php setcookie("num", "", time() - 60);?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>

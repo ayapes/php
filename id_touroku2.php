@@ -1,5 +1,5 @@
 <?php require_once '../selfphp/Encode.php'; ?>
-<?php setcookie('num' , $_POST['num'] , time() + (10 * 1 * 1 * 1)); ?>
+<?php setcookie('num' , $_POST['num'] , time() + (60 * 60 * 24 * 90)); ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -10,10 +10,8 @@
 </head>
 <body>
    <form method="POST" action="id_touroku_process.php">
-   <br>入力したIDは<?php
-print $_COOKIE['num']; 
-?>ですか？
-   <input type="hidden" name="num" value="<?=e($_COOKIE['num'])?>">
+   <br>入力したIDは<?php print $_POST['num']; ?>ですか？
+   <input type="hidden" name="num" value="<?=e($_POST['num']);?>">
    <input type="submit" value="OK" id="push2">
    <?php
         session_start();
