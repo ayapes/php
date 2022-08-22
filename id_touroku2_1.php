@@ -1,4 +1,5 @@
-<?php setcookie("num", "", time() - 60); ?>
+<?php session_start();?>
+<?php require_once '../selfphp/Encode.php';?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -20,8 +21,9 @@
             width: 80%;
             max-width: 350px;
             padding: 2rem;
-            border:1px solid #EEE;
+            border:1px solid #000;
             border-radius: 10px;
+            text-align: center;
         }
     </style>
 </head>

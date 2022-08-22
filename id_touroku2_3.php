@@ -1,5 +1,5 @@
-<?php require_once '../selfphp/Encode.php'; ?>
-
+<?php session_start();?>
+<?php require_once '../selfphp/Encode.php';?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -10,9 +10,10 @@
 </head>
 <body>
 <?php
-print $_COOKIE['num']; 
-?>を登録しました。<br>ありがとうございました
+echo $_SESSION['pwd'];?>
+<br>
+<?php print $_SESSION['id1']; ?>を登録しました。<br>ありがとうございました
     <br>
-<a href="id_touroku1.php">入力画面へ戻る</a>
+<a href="id_touroku2_1.php">入力画面へ戻る</a>
 </body>
 </html>
