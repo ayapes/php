@@ -1,5 +1,4 @@
-<?php require_once '../selfphp/Encode.php'; ?>
-<?php setcookie('num' , $_POST['num'] , time() + (60 * 60 * 24 * 90)); ?>
+<?php setcookie("num", "", time() - 60);?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,16 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-   <form method="POST" action="id_touroku_process.php">
-   <br>入力したIDは<?php print $_POST['num']; ?>ですか？
-   <input type="hidden" name="num" value="<?=e($_POST['num']);?>">
-   <input type="submit" value="OK" id="push2">
-   <?php
+<form method="POST" action="id_touroku2.php">
+        <div id="wrapper">
+            <div id="box">
+            <label for="title">ID:</label>
+            <input id="num" type="text" name="num" size="25">
+            <input type="submit" value="登録" id="push">
+            <?php
         session_start();
         $token = uniqid(bin2hex(random_bytes(13)), true);
         $_SESSION['token'] = $token;
         ?>
         <input type="hidden" name="token" value="<?php print $token; ?>">
-   </form> 
+            </div>
+        </div></form>
 </body>
 </html>
