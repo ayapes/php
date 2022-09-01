@@ -1,1 +1,3 @@
 .htaccess
+# vendor フォルダは要らない
+vendor/
